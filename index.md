@@ -1,14 +1,4 @@
-<head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
+
  1217
 # Surface Parametrization
 ## Torus
@@ -167,14 +157,14 @@ The vector field $\mathbf{w}$ is known as the vector-valued 2-form $\mathbf{w}:\
 $\left<\mathbf{w}([v_i,v_j,v_k]),v_j-v_i\right>=\omega([v_i,v_j])$, $\left<\mathbf{w}([v_i,v_j,v_k]),v_k-v_j\right>=\omega([v_j,v_k])$, $\left<\mathbf{w}([v_i,v_j,v_k]),v_i-v_k\right>=\omega([v_k,v_i])$.
 As a result, $\mathbf{w}$ can be explicitly formulated as $\mathbf{w}([v_i,v_j,v_k])=\frac{1}{2\left|[v_i,v_j,v_k]\right|}\left(\omega([v_i,v_j])v_k+\omega([v_k,v_i])v_j+\omega([v_j,v_k])v_i\right)\times\mathbf{n}([v_i,v_j,v_k])$.
 
-Then, the hodge conjugate of $\mathbf{w}$ is given as $*\mathbf{w}=\mathbf{n}\times\mathbf{w}$.
+Then, the hodge conjugate of $\mathbf{w}$ is given as $\mathbf{w}=\mathbf{n}\times\mathbf{w}$.
 
-The holomorphic 1-form is given by $z=\omega+i*\omega$, where $*\omega$ is the Hodge conjugate of $\omega$.
+The holomorphic 1-form is given by $z=\omega+i\omega$, where $\omega$ is the Hodge conjugate of $\omega$.
 
 ### Holomorphic 1-Form Basis
-Given a harmonic 1-form basis $\beta=\{\omega_1,\omega_2,\ldots,\omega_{2g}\}$. Then $*\omega$ can be formulated as $*\omega=\sum^{2g}_{k=1}\mu_k\omega_k$. The unknown coefficients $\{\mu_k\}_{k=1}^{2g}$ satisfy $\int_M\omega_j\wedge*\omega=\sum^{2g}_{k=1}\mu_k\int_M\omega_j\wedge\omega_k$, for $j=1,\ldots,2g$.
-Where $\left(\omega_k\wedge*\omega\right)(\tau)=\mathbf{w}_k(\tau)\times*\mathbf{w}(\tau)\cdot\mathbf{n}(\tau)|\tau|$.
-As a result, $\int_M\omega_j\wedge*\omega=\sum_{\tau\in\mathcal{F}(M)}(\omega_k\wedge*\omega)(\tau)=\sum_{\tau\in\mathcal{F}(M)}\mathbf{w}_k(\tau)\times*\mathbf{w}(\tau)\cdot\mathbf{n}(\tau)|\tau|$.
+Given a harmonic 1-form basis $\beta=\{\omega_1,\omega_2,\ldots,\omega_{2g}\}$. Then $\omega$ can be formulated as $\omega=\sum^{2g}_{k=1}\mu_k\omega_k$. The unknown coefficients $\{\mu_k\}_{k=1}^{2g}$ satisfy $\int_M\omega_j\wedge\omega=\sum^{2g}_{k=1}\mu_k\int_M\omega_j\wedge\omega_k$, for $j=1,\ldots,2g$.
+Where $\left(\omega_k\wedge\omega\right)(\tau)=\mathbf{w}_k(\tau)\times\mathbf{w}(\tau)\cdot\mathbf{n}(\tau)|\tau|$.
+As a result, $\int_M\omega_j\wedge\omega=\sum_{\tau\in\mathcal{F}(M)}(\omega_k\wedge\omega)(\tau)=\sum_{\tau\in\mathcal{F}(M)}\mathbf{w}_k(\tau)\times\mathbf{w}(\tau)\cdot\mathbf{n}(\tau)|\tau|$.
 
 Therefore, $\{\mu_k\}^{2g}_{k=1}$ can be computed by the linear system
 $\begin{bmatrix}
@@ -188,10 +178,10 @@ $\begin{bmatrix}
 \vdots\\
 \mu_{2g}
 \end{bmatrix}=\begin{bmatrix}
-\int_M\omega_1\wedge*\omega\\
-\int_M\omega_2\wedge*\omega\\
+\int_M\omega_1\wedge\omega\\
+\int_M\omega_2\wedge\omega\\
 \vdots\\
-\int_M\omega_{2g}\wedge*\omega
+\int_M\omega_{2g}\wedge\omega
 \end{bmatrix}$
 
-Ultimately, a basis for holomorphic 1-form is given as $\{z_k=\omega_k+i*\omega_k\}^{2g}_{k=1}$
+Ultimately, a basis for holomorphic 1-form is given as $\{z_k=\omega_k+i\omega_k\}^{2g}_{k=1}$
