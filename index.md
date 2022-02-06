@@ -9,7 +9,7 @@ Use Local chart. It  can be computed by the least squares conformal map.
 ![](https://i.imgur.com/YL7Oz7O.png)
 
 simplex:
-Given a set of affining independent points(不共面，共線等等) $\{v_0,\cdots,v_k\}\subset\mathbb{R},\, d\geq k+1$, The k-simplex $\sigma$ is the __minimal convex set__ (convex hull) containing $v_0,...,v_k$, denoted as $\sigma=[v_0,\cdots,v_k]=\left\{\sum^k_{l=1}\alpha_l v_l| \alpha_l\geq0, \sum^k_{l=1}\alpha_l=1\right\}$
+Given a set of affining independent points(不共面，共線等等) $$\{v_0,\cdots,v_k\}\subset\mathbb{R},\, d\geq k+1$$, The k-simplex $$\sigma$$ is the __minimal convex set__ (convex hull) containing $$v_0,...,v_k$$, denoted as $$\sigma=[v_0,\cdots,v_k]=\left\{\sum^k_{l=1}\alpha_l v_l| \alpha_l\geq0, \sum^k_{l=1}\alpha_l=1\right\}$$
 
 IN particular,
 * a point $v_0$ is a 0-simplex
