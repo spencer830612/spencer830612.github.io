@@ -14,7 +14,7 @@
 <meta property="og:description" content="前情提要在發現 ML KIT 可能沒辦法滿足我要對七段顯示器處理光學文字辨識後，我發現 TensorFlow 其實有給個範例，是關於 ocr 訓練出來的 tensorFlowLite 如何應用到手機上面。不過，當把專案匯入至我的 Android Studio 時，發現因為這個範例專案的 IDE 版本是 Android Studio 4.2，因此碰到許多問題。我會在下面 po 上我跟 ChatGpt">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-06-28T01:52:53.000Z">
-<meta property="article:modified_time" content="2024-06-28T05:52:05.117Z">
+<meta property="article:modified_time" content="2024-06-28T06:33:38.542Z">
 <meta property="article:author" content="史賓塞">
 <meta property="article:tag" content="Keras">
 <meta property="article:tag" content="Ocr">
@@ -103,6 +103,8 @@
       
         <h2 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h2><p>在發現 ML KIT 可能沒辦法滿足我要對七段顯示器處理光學文字辨識後，我發現 TensorFlow 其實有給個範例，是關於 ocr 訓練出來的 tensorFlowLite 如何應用到手機上面。不過，當把專案匯入至我的 Android Studio 時，發現因為這個範例專案的 IDE 版本是 Android Studio 4.2，因此碰到許多問題。我會在下面 po 上我跟 ChatGpt 來回對話的記錄，並在這裡 po 上有更改的 code 以方便以後的我與過來人參考</p>
 <p>這是我與 ChatGPT 的<a target="_blank" rel="noopener" href="https://chatgpt.com/share/a5dc6ce6-ea42-462c-9894-69ed70242feb">對話</a>，可以去看看。</p>
+<span id="more"></span>
+
 <hr>
 <h3 id="更改檔案-1：app-build-gradle"><a href="#更改檔案-1：app-build-gradle" class="headerlink" title="更改檔案 1：app:build.gradle"></a>更改檔案 1：app:build.gradle</h3><p>主要的變更有</p>
 <ul>
@@ -129,7 +131,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://spencer830612.github.io/20240628/3613599130/" data-id="clxya24me0003kk2e11lt49ho" data-title="嘗試能讓官方的 keras_ocr 能在我的 Android Studio Koala 跑起來" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://spencer830612.github.io/20240628/3613599130/" data-id="clxybj5ed000ces2e0e411f14" data-title="嘗試能讓官方的 keras_ocr 能在我的 Android Studio Koala 跑起來" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -142,9 +144,9 @@
 <nav id="article-nav">
   
   
-    <a href="/20240628/1243066710/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/20240626/1718242579/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">首頁</div>
+      <div class="article-nav-title">想利用 ppocrlabel 做圖像訓練的前置步驟</div>
     </a>
   
 </nav>
@@ -164,7 +166,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio-Koala/" rel="tag">Android Studio Koala</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Keras/" rel="tag">Keras</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ocr/" rel="tag">Ocr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gradle/" rel="tag">gradle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paddlepaddle/" rel="tag">paddlepaddle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ppocrlabel/" rel="tag">ppocrlabel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tensorFlowLite/" rel="tag">tensorFlowLite</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio-Koala/" rel="tag">Android Studio Koala</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Keras/" rel="tag">Keras</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ocr/" rel="tag">Ocr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/" rel="tag">diary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gradle/" rel="tag">gradle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paddlepaddle/" rel="tag">paddlepaddle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ppocrlabel/" rel="tag">ppocrlabel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tensorFlowLite/" rel="tag">tensorFlowLite</a></li></ul>
     </div>
   </div>
 
@@ -174,7 +176,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android-Studio-Koala/" style="font-size: 10px;">Android Studio Koala</a> <a href="/tags/Keras/" style="font-size: 10px;">Keras</a> <a href="/tags/Ocr/" style="font-size: 10px;">Ocr</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/paddlepaddle/" style="font-size: 10px;">paddlepaddle</a> <a href="/tags/ppocrlabel/" style="font-size: 10px;">ppocrlabel</a> <a href="/tags/tensorFlowLite/" style="font-size: 10px;">tensorFlowLite</a>
+      <a href="/tags/Android-Studio-Koala/" style="font-size: 10px;">Android Studio Koala</a> <a href="/tags/Keras/" style="font-size: 10px;">Keras</a> <a href="/tags/Ocr/" style="font-size: 10px;">Ocr</a> <a href="/tags/diary/" style="font-size: 10px;">diary</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/paddlepaddle/" style="font-size: 10px;">paddlepaddle</a> <a href="/tags/ppocrlabel/" style="font-size: 10px;">ppocrlabel</a> <a href="/tags/tensorFlowLite/" style="font-size: 10px;">tensorFlowLite</a>
     </div>
   </div>
 
@@ -197,10 +199,6 @@
         
           <li>
             <a href="/20240628/3613599130/">嘗試能讓官方的 keras_ocr 能在我的 Android Studio Koala 跑起來</a>
-          </li>
-        
-          <li>
-            <a href="/20240628/1243066710/">首頁</a>
           </li>
         
           <li>
