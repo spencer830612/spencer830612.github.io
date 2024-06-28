@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://spencer830612.github.io/20240626/1718242579/</loc>
+    <loc>http://spencer830612.github.io/20240628/3613599130/</loc>
+    
+    <lastmod>2024-06-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://spencer830612.github.io/about/index.html</loc>
     
     <lastmod>2024-06-28</lastmod>
     
@@ -13,16 +22,7 @@
   <url>
     <loc>http://spencer830612.github.io/tags/index.html</loc>
     
-    <lastmod>2024-06-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://spencer830612.github.io/about/index.html</loc>
-    
-    <lastmod>2024-06-27</lastmod>
+    <lastmod>2024-06-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -31,16 +31,25 @@
   <url>
     <loc>http://spencer830612.github.io/20240626/1620941357/</loc>
     
-    <lastmod>2024-06-27</lastmod>
+    <lastmod>2024-06-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://spencer830612.github.io/20240627/1243066710/</loc>
+    <loc>http://spencer830612.github.io/20240628/1243066710/</loc>
     
-    <lastmod>2024-06-27</lastmod>
+    <lastmod>2024-06-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://spencer830612.github.io/20240626/1718242579/</loc>
+    
+    <lastmod>2024-06-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -71,6 +80,34 @@
   
   <url>
     <loc>http://spencer830612.github.io/tags/tensorFlowLite/</loc>
+    <lastmod>2024-06-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://spencer830612.github.io/tags/Keras/</loc>
+    <lastmod>2024-06-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://spencer830612.github.io/tags/Ocr/</loc>
+    <lastmod>2024-06-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://spencer830612.github.io/tags/Android-Studio-Koala/</loc>
+    <lastmod>2024-06-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://spencer830612.github.io/tags/gradle/</loc>
     <lastmod>2024-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

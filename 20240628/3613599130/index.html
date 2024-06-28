@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>嘗試能讓官方的 keras_ocr 能在我的 Android Studio Koala 跑起來 | 史賓塞的地方</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="前情提要在發現 ML KIT 可能沒辦法滿足我要對七段顯示器處理光學文字辨識後，我發現 TensorFlow 其實有給個範例，是關於 ocr 訓練出來的 tensorFlowLite 如何應用到手機上面。不過，當把專案匯入至我的 Android Studio 時，發現因為這個範例專案的 IDE 版本是 Android Studio 4.2，因此碰到許多問題。我會在下面 po 上我跟 ChatGpt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="嘗試能讓官方的 keras_ocr 能在我的 Android Studio Koala 跑起來">
+<meta property="og:url" content="http://spencer830612.github.io/20240628/3613599130/index.html">
+<meta property="og:site_name" content="史賓塞的地方">
+<meta property="og:description" content="前情提要在發現 ML KIT 可能沒辦法滿足我要對七段顯示器處理光學文字辨識後，我發現 TensorFlow 其實有給個範例，是關於 ocr 訓練出來的 tensorFlowLite 如何應用到手機上面。不過，當把專案匯入至我的 Android Studio 時，發現因為這個範例專案的 IDE 版本是 Android Studio 4.2，因此碰到許多問題。我會在下面 po 上我跟 ChatGpt">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-06-28T01:52:53.000Z">
+<meta property="article:modified_time" content="2024-06-28T05:52:05.117Z">
+<meta property="article:author" content="史賓塞">
+<meta property="article:tag" content="Keras">
+<meta property="article:tag" content="Ocr">
+<meta property="article:tag" content="Android Studio Koala">
+<meta property="article:tag" content="gradle">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="史賓塞的地方" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">史賓塞的地方</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">一個自由自在的地方</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://spencer830612.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-build-with-keras-ocr-example" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/20240628/3613599130/" class="article-date">
+  <time class="dt-published" datetime="2024-06-28T01:52:53.000Z" itemprop="datePublished">2024-06-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      嘗試能讓官方的 keras_ocr 能在我的 Android Studio Koala 跑起來
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h2><p>在發現 ML KIT 可能沒辦法滿足我要對七段顯示器處理光學文字辨識後，我發現 TensorFlow 其實有給個範例，是關於 ocr 訓練出來的 tensorFlowLite 如何應用到手機上面。不過，當把專案匯入至我的 Android Studio 時，發現因為這個範例專案的 IDE 版本是 Android Studio 4.2，因此碰到許多問題。我會在下面 po 上我跟 ChatGpt 來回對話的記錄，並在這裡 po 上有更改的 code 以方便以後的我與過來人參考</p>
+<p>這是我與 ChatGPT 的<a target="_blank" rel="noopener" href="https://chatgpt.com/share/a5dc6ce6-ea42-462c-9894-69ed70242feb">對話</a>，可以去看看。</p>
+<hr>
+<h3 id="更改檔案-1：app-build-gradle"><a href="#更改檔案-1：app-build-gradle" class="headerlink" title="更改檔案 1：app:build.gradle"></a>更改檔案 1：app:build.gradle</h3><p>主要的變更有</p>
+<ul>
+<li>添加 namespace</li>
+<li>手動設置 java 版本：因為我的 IDE 版本設置是 17，因此我就改成 17。</li>
+<li>加上 viewBinding true：其實我覺得應該是不用，因為專案內的是用最基本的方式指派物件。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.diffchecker.com/dotkOibz/">內文比較的詳細連結</a></p>
+<hr>
+<h3 id="更改檔案-2：gradle-properties"><a href="#更改檔案-2：gradle-properties" class="headerlink" title="更改檔案 2：gradle.properties"></a>更改檔案 2：gradle.properties</h3><p>主要的變更是指定 java jdk 的位置。雖然 IDE 有指定，但我不知道為什麼這裡要再指定一次，編譯才會過。</p>
+<p><a target="_blank" rel="noopener" href="https://www.diffchecker.com/LkYRSIbs/">內文比較的詳細連結</a></p>
+<hr>
+<h3 id="更改檔案-3：project-build-gradle"><a href="#更改檔案-3：project-build-gradle" class="headerlink" title="更改檔案 3：project: build.gradle"></a>更改檔案 3：project: build.gradle</h3><p>主要的變更有</p>
+<ul>
+<li>變更 gradle 版本號：不同的 Android Studio 有不同的 gradle 版本指定，因此要改</li>
+<li>變更 gradle-download-task：我就順勢升級了</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.diffchecker.com/LVuvM6FT/">內文比較的詳細連結</a></p>
+<hr>
+<h3 id="更改檔案-4：gradle-wrapper-properties"><a href="#更改檔案-4：gradle-wrapper-properties" class="headerlink" title="更改檔案 4：gradle-wrapper.properties"></a>更改檔案 4：gradle-wrapper.properties</h3><p>主要的變更是修改 gradle 的版號。</p>
+<p><a target="_blank" rel="noopener" href="https://www.diffchecker.com/icExyeaN/">內文比較的詳細連結</a></p>
+<p>大坑大雷，但最後我去更新所有 dependencies 的版本號，也沒有問題了！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://spencer830612.github.io/20240628/3613599130/" data-id="clxya24me0003kk2e11lt49ho" data-title="嘗試能讓官方的 keras_ocr 能在我的 Android Studio Koala 跑起來" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-Studio-Koala/" rel="tag">Android Studio Koala</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Keras/" rel="tag">Keras</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ocr/" rel="tag">Ocr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gradle/" rel="tag">gradle</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/20240628/1243066710/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">首頁</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Studio-Koala/" rel="tag">Android Studio Koala</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Keras/" rel="tag">Keras</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ocr/" rel="tag">Ocr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gradle/" rel="tag">gradle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paddlepaddle/" rel="tag">paddlepaddle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ppocrlabel/" rel="tag">ppocrlabel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tensorFlowLite/" rel="tag">tensorFlowLite</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Android-Studio-Koala/" style="font-size: 10px;">Android Studio Koala</a> <a href="/tags/Keras/" style="font-size: 10px;">Keras</a> <a href="/tags/Ocr/" style="font-size: 10px;">Ocr</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/paddlepaddle/" style="font-size: 10px;">paddlepaddle</a> <a href="/tags/ppocrlabel/" style="font-size: 10px;">ppocrlabel</a> <a href="/tags/tensorFlowLite/" style="font-size: 10px;">tensorFlowLite</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/20240628/3613599130/">嘗試能讓官方的 keras_ocr 能在我的 Android Studio Koala 跑起來</a>
+          </li>
+        
+          <li>
+            <a href="/20240628/1243066710/">首頁</a>
+          </li>
+        
+          <li>
+            <a href="/20240626/1718242579/">想利用 ppocrlabel 做圖像訓練的前置步驟</a>
+          </li>
+        
+          <li>
+            <a href="/20240626/1620941357/">今日工作心得</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 史賓塞<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
