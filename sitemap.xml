@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://spencer830612.github.io/20240702/3182283678/</loc>
+    
+    <lastmod>2024-07-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://spencer830612.github.io/20240626/1718242579/</loc>
     
     <lastmod>2024-06-28</lastmod>
@@ -29,15 +38,6 @@
   </url>
   
   <url>
-    <loc>http://spencer830612.github.io/tags/index.html</loc>
-    
-    <lastmod>2024-06-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://spencer830612.github.io/about/index.html</loc>
     
     <lastmod>2024-06-28</lastmod>
@@ -49,7 +49,7 @@
 
   <url>
     <loc>http://spencer830612.github.io/</loc>
-    <lastmod>2024-06-28</lastmod>
+    <lastmod>2024-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -57,56 +57,63 @@
   
   <url>
     <loc>http://spencer830612.github.io/tags/ppocrlabel/</loc>
-    <lastmod>2024-06-28</lastmod>
+    <lastmod>2024-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://spencer830612.github.io/tags/paddlepaddle/</loc>
-    <lastmod>2024-06-28</lastmod>
+    <lastmod>2024-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://spencer830612.github.io/tags/tensorFlowLite/</loc>
-    <lastmod>2024-06-28</lastmod>
+    <lastmod>2024-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://spencer830612.github.io/tags/diary/</loc>
-    <lastmod>2024-06-28</lastmod>
+    <lastmod>2024-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://spencer830612.github.io/tags/%E5%BD%B1%E5%83%8F%E8%BE%A8%E8%AD%98/</loc>
+    <lastmod>2024-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://spencer830612.github.io/tags/Keras/</loc>
-    <lastmod>2024-06-28</lastmod>
+    <lastmod>2024-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://spencer830612.github.io/tags/Ocr/</loc>
-    <lastmod>2024-06-28</lastmod>
+    <lastmod>2024-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://spencer830612.github.io/tags/Android-Studio-Koala/</loc>
-    <lastmod>2024-06-28</lastmod>
+    <lastmod>2024-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://spencer830612.github.io/tags/gradle/</loc>
-    <lastmod>2024-06-28</lastmod>
+    <lastmod>2024-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

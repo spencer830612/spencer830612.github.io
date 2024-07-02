@@ -21,12 +21,13 @@
 
 <p>看來是安裝太新的版本了，於是我執行 <code>pip install opencv-python&lt;=4.6.0.66</code>結果還是沒用。但是看起來還是不行，看起來是 numpy 太新，於是我嘗試：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip install numpy&lt;<span class="number">2.0</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
+
 <p>可以了，終於前進到下一個錯誤了</p>
 <h3 id="第八步"><a href="#第八步" class="headerlink" title="第八步"></a>第八步</h3><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Traceback (most recent <span class="keyword">call</span> last):</span><br><span class="line">  File &quot;F:\PaddleOCR-release-<span class="number">2</span>.<span class="number">7</span>.<span class="number">1</span>\PaddleOCR-release-<span class="number">2</span>.<span class="number">7</span>.<span class="number">1</span>\PPOCRLabel\PPOCRLabel.py&quot;, line <span class="number">2840</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    sys.<span class="keyword">exit</span>(main())</span><br><span class="line">             ^^^^^^</span><br><span class="line">  File &quot;F:\PaddleOCR-release-<span class="number">2</span>.<span class="number">7</span>.<span class="number">1</span>\PaddleOCR-release-<span class="number">2</span>.<span class="number">7</span>.<span class="number">1</span>\PPOCRLabel\PPOCRLabel.py&quot;, line <span class="number">2828</span>, <span class="keyword">in</span> main</span><br><span class="line">    app, _win = get_main_app(sys.argv)</span><br><span class="line">                ^^^^^^^^^^^^^^^^^^^^^^</span><br><span class="line">  File &quot;F:\PaddleOCR-release-<span class="number">2</span>.<span class="number">7</span>.<span class="number">1</span>\PaddleOCR-release-<span class="number">2</span>.<span class="number">7</span>.<span class="number">1</span>\PPOCRLabel\PPOCRLabel.py&quot;, line <span class="number">2818</span>, <span class="keyword">in</span> get_main_app</span><br><span class="line">    win = MainWindow(lang=args.lang,</span><br><span class="line">          ^^^^^^^^^^^^^^^^^^^^^^^^^^</span><br><span class="line">  File &quot;F:\PaddleOCR-release-<span class="number">2</span>.<span class="number">7</span>.<span class="number">1</span>\PaddleOCR-release-<span class="number">2</span>.<span class="number">7</span>.<span class="number">1</span>\PPOCRLabel\PPOCRLabel.py&quot;, line <span class="number">104</span>, <span class="keyword">in</span> __init__</span><br><span class="line">    self.table_ocr = PPStructure(use_pdserving=False,</span><br><span class="line">                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span><br><span class="line">  File &quot;C:\tools\miniconda3\envs\lastTry\Lib\site-packages\paddleocr\paddleocr.py&quot;, line <span class="number">762</span>, <span class="keyword">in</span> __init__</span><br><span class="line">    super().__init__(params)</span><br><span class="line">  File &quot;F:\PaddleOCR-release-<span class="number">2</span>.<span class="number">7</span>.<span class="number">1</span>\PaddleOCR-release-<span class="number">2</span>.<span class="number">7</span>.<span class="number">1</span>\PPOCRLabel\..\ppstructure\predict_system.py&quot;, line <span class="number">82</span>, <span class="keyword">in</span> __init__</span><br><span class="line">    self.return_word_box = args.return_word_box</span><br><span class="line">                           ^^^^^^^^^^^^^^^^^^^^</span><br><span class="line"><span class="function">AttributeError: &#x27;<span class="title">Namespace</span>&#x27; <span class="title">object</span> <span class="title">has</span> <span class="title">no</span> <span class="title">attribute</span> &#x27;<span class="title">return_word_box</span>&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <p>然後根據<a href="https://github.com/PaddlePaddle/PaddleOCR/issues/11166">這裡</a>的說明，是 paddleocr 版本太新的緣故，試著安裝 2.6.0 版本，解決了</p>
 <h3 id="第九步"><a href="#第九步" class="headerlink" title="第九步"></a>第九步</h3><p>你可能會遇到 <code>Microsoft Visual C++ 14.0 is required. Get it with “Microsoft Visual C   Build Tools</code>，你需要執行：<br><code>conda install libpython m2w64-toolchain -c msys2</code>。什麼去找 build-tools 的都沒用，<a href="https://blog.csdn.net/qzzzxiaosheng/article/details/125119006">我覺得裡面講的也很有道理，可以去看看</a>。</p>
-<h3 id="第十步"><a href="#第十步" class="headerlink" title="第十步"></a>第十步</h3><p>在此資料夾裡執行 <code>python PPOCRLabel.py </code>，遇到問題：</p>
+<h3 id="第十步"><a href="#第十步" class="headerlink" title="第十步"></a>第十步</h3><p>在此資料夾裡執行 <code>python PPOCRLabel.py</code>，遇到問題：</p>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">Traceback (most recent <span class="keyword">call</span> last):</span><br><span class="line">  File &quot;&lt;frozen runpy&gt;&quot;, line <span class="number">198</span>, <span class="keyword">in</span> _run_module_as_main</span><br><span class="line">  File &quot;&lt;frozen runpy&gt;&quot;, line <span class="number">88</span>, <span class="keyword">in</span> _run_code</span><br><span class="line">  File &quot;C:\tools\miniconda3\envs\lastTry\Scripts\PPOCRLabel.exe\__main__.py&quot;, line <span class="number">4</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">  File &quot;C:\tools\miniconda3\envs\lastTry\Lib\site-packages\PPOCRLabel\PPOCRLabel.py&quot;, line <span class="number">40</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    from paddleocr import PaddleOCR, PPStructure</span><br><span class="line">  File &quot;F:\PaddleOCR-release-<span class="number">2</span>.<span class="number">7</span>.<span class="number">1</span>\PaddleOCR-release-<span class="number">2</span>.<span class="number">7</span>.<span class="number">1</span>\PPOCRLabel\..\paddleocr.py&quot;, line <span class="number">575</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    class PaddleOCR(predict_system.TextSystem):</span><br><span class="line">                    ^^^^^^^^^^^^^^</span><br><span class="line"><span class="function">NameError: <span class="title">name</span> &#x27;<span class="title">predict_system</span>&#x27; <span class="title">is</span> <span class="title">not</span> <span class="title">defined</span></span></span><br></pre></td></tr></table></figure>
 
 <p>最後在<a href="https://github.com/PaddlePaddle/PaddleOCR/issues/12057">這裡</a>看到解法，其中底下說：</p>
@@ -41,21 +42,57 @@
       </tags>
   </entry>
   <entry>
-    <title>今日工作心得</title>
-    <url>/20240626/1620941357/</url>
-    <content><![CDATA[<p>我真的覺得濫用靜態變數真的會造成偵錯的災難……當然，我負責的 App 習慣只用一個 activity 就負責所有頁面的內容，但是因為不同人接手，再加上沒有交接習慣的緣故，因此容易有重工的情形。</p>
-<p>全部是靜態變數（static variable），因此我非常難知道這個變數是為何而變，我必須要在可能的入口全部埋一次偵錯日誌，再透過二分法慢慢篩出真正的入口。</p>
-<p>我希望自己做程式時可以辦到：</p>
+    <title>評估影像辨識的流程</title>
+    <url>/20240702/3182283678/</url>
+    <content><![CDATA[<p>產線上似乎想要有可以方便挑出 LCD 上面的錯誤數字或代碼，希望可以用影像可以「快速」的抓出來。所以我就搜尋了下午並且看看網路上實作的教學。</p>
+<span id="more"></span>
+
+<p>目前可以使用的資料訓練方式，並且已有現成可以在 Android 上執行的程式碼：</p>
+<ol>
+<li>Tesseract：傳統 OCR 辨識</li>
+<li>Keras_OCR：機器學習 OCR</li>
+</ol>
+<p>為何往這兩個方向發展：</p>
 <ul>
-<li><p>不濫用靜態變數：靜態變數只用在常數。在設計時，就要先考慮好這些需要傳遞變數的情形，不要用靜態變數迴避此問題。</p>
-</li>
-<li><p>不要為了省變數個數而重複使用：原先的 App 會為了達到此目的，把不同意義的內容用同個變數去承載；再加上靜態變數的濫用問題，導致寫程式與維護上更令人崩潰。</p>
+<li>Tesseract 與 TensorFlow 皆為 Google 維護，且有許多文件可以參考</li>
+<li>有不少參考文件</li>
+<li>有 android 能使用的配套措施<ul>
+<li>Tesseract 有現成的套用 APP，Keras_OCR 訓練出來的模型還需要轉換成手機能用的</li>
+<li>Tesseract 可以在已有的模型上加資料再訓練</li>
+</ul>
 </li>
 </ul>
-<p>我最近加入了程人頻道，發現裡面有前人整理的面試秘笈，希望我能有效吸收、找到更好的工作！</p>
+<p>目前待解決的問題</p>
+<ul>
+<li>個別的問題<ol>
+<li>Keras_OCR<ul>
+<li>TensorFlow 是現在流行的機器學習框架，但是很少提供七段顯示器的辨識核心</li>
+<li>機器學習的針對性超級強，並且屬於黑箱模式，很難思考為什麼我們的場景會無法使用<ul>
+<li>模型訓練之初就必須儘量蒐集我們實際使用的情景</li>
+<li>如果需要再辨識出新列入的文字，必須要重頭訓練</li>
+<li>要實際訓練一次，才能知道模型的準確損失率如何、我們的資料量是否有好好訓練模型</li>
+<li>要訓練「文字在哪裡的模型」與「這是什麼文字的模型」</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tesseract<ul>
+<li>Tesseract 擅長辨識數位文檔，影像必須先處理成 Tesseract 容易辨識的顏色分布（黑白化、清除非文字的雜訊、加強文字輪廓），這方面在 Android 上比較難做</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>共同的問題<ol>
+<li>目前兩方現存的模型在我們 LCD 螢幕上的辨識率非常不好</li>
+<li>訓練資料集很大：以網路上的案例，Tesseract 在現有的訓練集再加上修正集，作者也追加了 500 張圖片與 5000 個字元對應；而 Keras_OCR 只訓練一輪的模型通常無法使用，但是要訓練多寡也是靠事後的準確損失率來做判斷</li>
+</ol>
+</li>
+</ul>
+<p>目前可以看到：如果需要能在工作上有幫助的，通常會需要有大量的資料訓練，也不是說一兩百張照片就能解決的。因此如果要發展，可能僅憑我會需要耗費非常多的時間。</p>
 ]]></content>
       <tags>
         <tag>diary</tag>
+        <tag>影像辨識</tag>
       </tags>
   </entry>
   <entry>
@@ -93,6 +130,24 @@
         <tag>Ocr</tag>
         <tag>Android Studio Koala</tag>
         <tag>gradle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>今日工作心得</title>
+    <url>/20240626/1620941357/</url>
+    <content><![CDATA[<p>我真的覺得濫用靜態變數真的會造成偵錯的災難……當然，我負責的 App 習慣只用一個 activity 就負責所有頁面的內容，但是因為不同人接手，再加上沒有交接習慣的緣故，因此容易有重工的情形。</p>
+<p>全部是靜態變數（static variable），因此我非常難知道這個變數是為何而變，我必須要在可能的入口全部埋一次偵錯日誌，再透過二分法慢慢篩出真正的入口。</p>
+<p>我希望自己做程式時可以辦到：</p>
+<ul>
+<li><p>不濫用靜態變數：靜態變數只用在常數。在設計時，就要先考慮好這些需要傳遞變數的情形，不要用靜態變數迴避此問題。</p>
+</li>
+<li><p>不要為了省變數個數而重複使用：原先的 App 會為了達到此目的，把不同意義的內容用同個變數去承載；再加上靜態變數的濫用問題，導致寫程式與維護上更令人崩潰。</p>
+</li>
+</ul>
+<p>我最近加入了程人頻道，發現裡面有前人整理的面試秘笈，希望我能有效吸收、找到更好的工作！</p>
+]]></content>
+      <tags>
+        <tag>diary</tag>
       </tags>
   </entry>
 </search>
