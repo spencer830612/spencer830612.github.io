@@ -8,7 +8,7 @@ http://spencer830612.github.io/tags/ppocrlabel/
 http://spencer830612.github.io/tags/paddlepaddle/
 http://spencer830612.github.io/tags/tensorFlowLite/
 http://spencer830612.github.io/tags/diary/
-http://spencer830612.github.io/tags/%E5%BD%B1%E5%83%8F%E8%BE%A8%E8%AD%98/
+http://spencer830612.github.io/tags/image-recognize/
 http://spencer830612.github.io/tags/Keras/
 http://spencer830612.github.io/tags/Ocr/
 http://spencer830612.github.io/tags/Android-Studio-Koala/
